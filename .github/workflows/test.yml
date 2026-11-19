@@ -16,9 +16,17 @@ jobs:
       - name: Syntax checks
         run: |
           node --check app.js
+          node --check src/model.js
+          node --check tests/browser-smoke.mjs
           node --check data/expanded-events.js
           node --check data/reading-links.js
           node --check data/locations.js
           node --check data/expanded-societies.js
       - name: Run unit tests
         run: npm test
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Run Chromium smoke tests
+        run: npm run test:browser
