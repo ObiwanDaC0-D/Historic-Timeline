@@ -47,3 +47,7 @@ No runtime dependencies.
 ## License
 
 MIT.
+
+## Global history expansion
+
+The app now loads additional curated milestones from `data/expanded-events.js`, broadening coverage of Africa, Asia, the Americas and the Pacific. Dates remain approximate where indicated; entries have not undergone individual source verification. See [Historical editorial standards](docs/HISTORICAL_STANDARDS.md) for the evidence and review roadmap.
