@@ -8,3 +8,11 @@ button:focus-visible,select:focus-visible,input:focus-visible,.geo-marker:focus-
 #mapSelection{margin:12px 0}
 #viewDescription{margin:8px 0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+/* Phase 11: source provenance and society research panels */
+.research-panel{border:1px solid #617b78;border-radius:12px;padding:18px;margin:16px 0;background:rgba(25,48,58,.55)}
+.research-evidence{margin-top:12px;border-top:1px solid #617b78;padding-top:9px}
+.research-evidence summary{cursor:pointer;color:#f0cf91;font-weight:600}
+.research-status{font-size:.91rem;opacity:.85;line-height:1.55}
+.research-evidence a,#sourceCatalog a{color:#f0cf91;text-decoration:underline;text-underline-offset:3px}
+.research-evidence summary:focus-visible{outline:3px solid #f4d99d;outline-offset:3px}
