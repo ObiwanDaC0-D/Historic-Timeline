@@ -55,7 +55,7 @@ const societies=[
 if(typeof window!=='undefined'&&Array.isArray(window.HISTORIC_EXTRA_SOCIETIES)){societies.push(...window.HISTORIC_EXTRA_SOCIETIES);societies.sort((a,b)=>a.start-b.start);}
 // Canonical validated model, while preserving legacy array records for existing renderers.
 const historicalModel=(typeof window!=='undefined'&&window.HistoricModel)?window.HistoricModel:(typeof require==='function'?require('./src/model.js'):null);
-const canonicalData=historicalModel.build(entries,societies,(typeof window!=='undefined'&&window.HISTORIC_LOCATIONS)||{});
+const canonicalData=historicalModel.build(entries,societies,(typeof window!=='undefined'&&window.HISTORIC_LOCATIONS)||(typeof require==='function'?require('./data/locations.js'):{}));
 for(const s of societies){const normalized=canonicalData.societies.find(p=>p.name===s.name);s.id=normalized.id;s.lat=normalized.lat;s.lon=normalized.lon;s.place=normalized.place;}
 const tracks=[
 ["Human origins & cognition","Evolution, symbolic behavior, social learning and cumulative culture."],
