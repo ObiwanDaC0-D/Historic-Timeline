@@ -18,6 +18,7 @@ jobs:
           node --check app.js
           node --check src/model.js
           node --check src/storage.js
+          node --check src/navigation.js
           node --check tests/browser-smoke.mjs
           node --check data/expanded-events.js
           node --check data/reading-links.js
