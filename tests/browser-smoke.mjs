@@ -38,9 +38,13 @@ try{
   await page.locator("#mapSociety").selectOption("society-mali-empire");
   assert.match(await page.locator("#mapSelection").innerText(),/Mali Empire/);
   assert.match(await page.locator("#yearLabel").innerText(),/CE/);
+  assert.match(await page.locator("#societyDetail").innerText(),/Mali Empire/);
   await page.locator("#clearMapSelection").click();
   await page.locator("#chronologyWindow").selectOption("medieval");
   assert.ok((await page.locator("#chronologyChart svg").count())===1,"Chronology chart missing");
+  assert.ok(await page.locator("#sourceCatalog a").count()>=8,"Source catalog missing");
+  assert.ok(await page.locator("#researchConnections article").count()>=3,"Research connections missing");
+  assert.ok(await page.locator(".research-evidence").count()>0,"Research evidence disclosures missing");
   await page.locator("#note").fill("Phase 9 browser smoke note");
   await page.locator("#saveNote").click();
   assert.match(await page.locator("#saved").innerText(),/Phase 9 browser smoke note/);
