@@ -63,3 +63,7 @@ Bookmarks now identify events by title rather than year to avoid confusing diffe
 ## Geographic reference map (next phase)
 
 `data/locations.js` records approximate latitude/longitude for selected historical centers. The app projects these onto a simplified equirectangular SVG world map and filters active societies by the chosen year. The coastlines are hand-simplified shapes and **not** accurate GIS polygons; points do **not** indicate the extent of empires or civilizations. Map geometry is covered by unit tests. The next step is a properly sourced basemap and uncertainty-aware historical spatial datasets.
+
+## Expanded society atlas
+
+`data/expanded-societies.js` adds fifteen society profiles with approximate historical date ranges, regional contexts and georeferenced centers. The map supports filtering by region and toggling marker labels. These points are **reference centers**, not territorial extents. Many profiles span centuries of political change and should not be interpreted as stable borders. The map remains a simplified reference illustration, not a GIS dataset. The new profiles are covered by automated data-validation tests.
