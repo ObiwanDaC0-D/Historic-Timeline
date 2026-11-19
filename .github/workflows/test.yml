@@ -1,0 +1,22 @@
+name: Validate Historic Timeline
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check app.js
+          node --check data/expanded-events.js
+          node --check data/reading-links.js
+      - name: Run unit tests
+        run: npm test
