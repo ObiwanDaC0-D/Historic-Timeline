@@ -67,3 +67,7 @@ Bookmarks now identify events by title rather than year to avoid confusing diffe
 ## Expanded society atlas
 
 `data/expanded-societies.js` adds fifteen society profiles with approximate historical date ranges, regional contexts and georeferenced centers. The map supports filtering by region and toggling marker labels. These points are **reference centers**, not territorial extents. Many profiles span centuries of political change and should not be interpreted as stable borders. The map remains a simplified reference illustration, not a GIS dataset. The new profiles are covered by automated data-validation tests.
+
+## Comparative chronology
+
+The Historical Data panel now includes an interactive SVG chart showing approximate start/end periods of curated society profiles. Choose ancient, classical, medieval or modern windows, and optionally highlight one society. The chart responds to the selected timeline year and lists selected economic/scientific milestones for the current window. Bars indicate editorially approximate date ranges **only**: they do not quantify influence, territory, population or economic output. Overlap is not evidence of contact or causation.
