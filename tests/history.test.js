@@ -7,3 +7,7 @@ test('society ranges and map positions are valid',()=>{for(const s of h.societie
 test('year formatting handles BCE and CE',()=>{assert.equal(h.fmt(-211),'211 BCE');assert.equal(h.fmt(211),'211 CE')});
 test('zoom ranges are valid',()=>{for(const [a,b,step] of Object.values(h.range)){assert.ok(a<b);assert.ok(step>0)}});
 test('all thematic pathways have descriptions',()=>{assert.ok(h.tracks.length>=8);for(const t of h.tracks)assert.ok(t[0]&&t[1])});
+
+test('geographic projection places equator and prime meridian at map center',()=>{assert.deepEqual(h.project(0,0),{x:480,y:240})});
+test('geographic projection preserves longitude and latitude direction',()=>{assert.ok(h.project(0,-90).x<h.project(0,90).x);assert.ok(h.project(60,0).y<h.project(-60,0).y)});
+test('geographic polygon path is closed',()=>{assert.match(h.polygonPath([[0,0],[10,0],[10,10]]),/ Z$/)});
