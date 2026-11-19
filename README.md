@@ -21,7 +21,7 @@ Open `index.html` in a modern browser, or enable GitHub Pages under **Settings â
 
 ## Important limitations
 
-This is an initial curated **educational prototype**, not an exhaustive or scholarly validated database. The schematic map uses approximate screen coordinates, not geographic boundaries or GIS layers. The dataset is small, and its global coverage is uneven. The historical data section does not yet provide defensible quantitative time series. Sources are introductory institutional references rather than item-level citations. The bookmark button saves the event as a local note, and repeated clicks can create duplicates. Notes live in browser localStorage and are not synchronized across devices.
+This is an initial curated **educational prototype**, not an exhaustive or scholarly validated database. The map now uses approximate WGS84 reference-center coordinates with a simplified SVG continental outline. It is not a GIS basemap, territorial reconstruction or historical border dataset. The dataset is small, and its global coverage is uneven. The historical data section does not yet provide defensible quantitative time series. Sources are introductory institutional references rather than item-level citations. The bookmark button saves the event as a local note, and repeated clicks can create duplicates. Notes live in browser localStorage and are not synchronized across devices.
 
 Periods are heuristic and not universally applicable. Date confidence labels indicate broad date character, **not a quantified probability or independent source audit**.
 
@@ -59,3 +59,7 @@ Selected milestones display suggested institutional reading links from `data/rea
 GitHub Actions now runs JavaScript syntax checks and the Node unit-test suite on pushes and pull requests to `main`. Check the **Actions** tab for actual run results; adding the workflow does not by itself verify a passing test run.
 
 Bookmarks now identify events by title rather than year to avoid confusing different events in the same year, and repeated clicks on the same event do not add duplicate saved notes.
+
+## Geographic reference map (next phase)
+
+`data/locations.js` records approximate latitude/longitude for selected historical centers. The app projects these onto a simplified equirectangular SVG world map and filters active societies by the chosen year. The coastlines are hand-simplified shapes and **not** accurate GIS polygons; points do **not** indicate the extent of empires or civilizations. Map geometry is covered by unit tests. The next step is a properly sourced basemap and uncertainty-aware historical spatial datasets.
