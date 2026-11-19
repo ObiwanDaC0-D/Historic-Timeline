@@ -3,7 +3,17 @@ const test=require("node:test");
 const assert=require("node:assert/strict");
 const research=require("../src/research.js");
 const view=require("../src/research-view.js");
-const app=require("../app.js");
+const fs=require("node:fs");
+const path=require("node:path");
+const vm=require("node:vm");
+function fullAtlas(){
+ const context={window:{HistoricModel:require("../src/model.js"),HistoricNavigation:require("../src/navigation.js"),HistoricStorage:require("../src/storage.js"),HistoricResearch:research,HistoricResearchView:view},module:{exports:{}}};
+ for(const file of ["data/expanded-events.js","data/expanded-societies.js","data/locations.js","app.js"]){
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,"..",file),"utf8"),context,{filename:file});
+ }
+ return context.module.exports;
+}
+const app=fullAtlas();
 test("research source URLs use HTTPS and references resolve",()=>{
  assert.deepEqual(research.validate(research.events),[]);
  assert.ok(Object.keys(research.sources).length>=8);
