@@ -21,7 +21,7 @@ Open `index.html` in a modern browser, or enable GitHub Pages under **Settings â
 
 ## Important limitations
 
-This is an initial curated **educational prototype**, not an exhaustive or scholarly validated database. The map now uses approximate WGS84 reference-center coordinates with a simplified SVG continental outline. It is not a GIS basemap, territorial reconstruction or historical border dataset. The dataset is small, and its global coverage is uneven. The historical data section does not yet provide defensible quantitative time series. Sources are introductory institutional references rather than item-level citations. The bookmark button saves the event as a local note, and repeated clicks can create duplicates. Notes live in browser localStorage and are not synchronized across devices.
+This is an initial curated **educational prototype**, not an exhaustive or scholarly validated database. The map now uses approximate WGS84 reference-center coordinates with a simplified SVG continental outline. It is not a GIS basemap, territorial reconstruction or historical border dataset. The dataset is small, and its global coverage is uneven. The historical data section does not yet provide defensible quantitative time series. Sources are introductory institutional references rather than item-level citations. The bookmark button saves the event as a local note; repeated clicks on the same event are deduplicated. Notes live in browser localStorage and are not synchronized across devices.
 
 Periods are heuristic and not universally applicable. Date confidence labels indicate broad date character, **not a quantified probability or independent source audit**.
 
@@ -71,3 +71,14 @@ Bookmarks now identify events by title rather than year to avoid confusing diffe
 ## Comparative chronology
 
 The Historical Data panel now includes an interactive SVG chart showing approximate start/end periods of curated society profiles. Choose ancient, classical, medieval or modern windows, and optionally highlight one society. The chart responds to the selected timeline year and lists selected economic/scientific milestones for the current window. Bars indicate editorially approximate date ranges **only**: they do not quantify influence, territory, population or economic output. Overlap is not evidence of contact or causation.
+
+## Phase 9 stabilization
+
+- `src/model.js` provides a shared, validated event/society model with stable IDs and geographic coordinate checks. The existing UI continues using legacy event arrays during migration, so this is an incremental normalization rather than a full rewrite.
+- `src/styles/atlas.css` contains the extracted stylesheet.
+- `src/storage.js` safely reads and writes notes using the **unchanged** `historic-timeline-notes-v1` localStorage key. Existing notes remain in place. If storage is blocked, saving displays an error instead of silently failing.
+- Historical display rejects year zero; the main year input moves zero to 1 CE. Legacy negative BCE dates retain their prior meaning.
+- `tests/model-integration.test.js` loads the full browser dataset in an isolated environment and checks validation, uniqueness, chronological conventions, and note compatibility.
+- `tests/browser-smoke.mjs` uses Chromium/Playwright to test initialization, filters, map, chronology, note persistence and year-zero behavior. Run with `npm install && npx playwright install chromium && npm run test:browser`. Playwright is a **development-only** dependency; the deployed application remains dependency-free.
+
+The interface and historical content are not yet fully modularized; future work should progressively extract map, timeline and comparison renderers into dedicated modules without changing saved-note keys.
