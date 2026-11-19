@@ -51,3 +51,11 @@ MIT.
 ## Global history expansion
 
 The app now loads additional curated milestones from `data/expanded-events.js`, broadening coverage of Africa, Asia, the Americas and the Pacific. Dates remain approximate where indicated; entries have not undergone individual source verification. See [Historical editorial standards](docs/HISTORICAL_STANDARDS.md) for the evidence and review roadmap.
+
+## Research links and continuous integration
+
+Selected milestones display suggested institutional reading links from `data/reading-links.js`. These links are not individually audited as direct evidence for each claim. Most events still need specific citations and scholarly review.
+
+GitHub Actions now runs JavaScript syntax checks and the Node unit-test suite on pushes and pull requests to `main`. Check the **Actions** tab for actual run results; adding the workflow does not by itself verify a passing test run.
+
+Bookmarks now identify events by title rather than year to avoid confusing different events in the same year, and repeated clicks on the same event do not add duplicate saved notes.
