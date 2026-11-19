@@ -82,3 +82,12 @@ The Historical Data panel now includes an interactive SVG chart showing approxim
 - `tests/browser-smoke.mjs` uses Chromium/Playwright to test initialization, filters, map, chronology, note persistence and year-zero behavior. Run with `npm install && npx playwright install chromium && npm run test:browser`. Playwright is a **development-only** dependency; the deployed application remains dependency-free.
 
 The interface and historical content are not yet fully modularized; future work should progressively extract map, timeline and comparison renderers into dedicated modules without changing saved-note keys.
+
+## Phase 10: timeline and atlas navigation
+
+- Zoom in/out on the selected year with fourfold progressive steps; reset to the current era range. The slider uses 1,000 normalized positions over the active view, allowing progressively finer navigation instead of a single 300,000-year linear scale.
+- Entering a year or selecting a society outside the current period automatically switches to an appropriate historical scale. The selected year continues to drive nearby events, the geographic map, and comparative chronology.
+- Choose a society through the map selector, an active map marker, or a society card. The application highlights its approximate reference center and displays its historical span; if the selected year is outside that span, the timeline moves to the society's midpoint.
+- Keyboard users can activate map and chronology markers with Enter or Space. Focus indicators and reduced-motion styles improve accessibility.
+- The map is still a simplified modern geographic locator, **not** a historical territorial reconstruction. Society start/end dates are approximate and do not imply unchanged political control.
+- Automated Node tests cover navigation math and selection; Playwright browser smoke tests cover zoom and map-to-timeline synchronization. No user notes or existing historical records were migrated or deleted.
