@@ -94,7 +94,7 @@ The interface and historical content are not yet fully modularized; future work 
 
 ## Phase 11 — Historical Research
 
-The atlas now displays a **research-context disclosure** on milestone cards. Eight selected milestones have structured editorial dating metadata and links to institutional reading leads. Remaining milestones explicitly state that no event-level source has been assigned. These are **not verified claim-by-claim citations**.
+The atlas now displays a **research-context disclosure** on milestone cards. Seven selected milestones have structured editorial dating metadata and links to institutional reading leads. Remaining milestones explicitly state that no event-level source has been assigned. These are **not verified claim-by-claim citations**.
 
 Selecting a society reveals a research profile with its existing governance, economy, social organization, belief traditions, approximate date span and geographically/temporally overlapping milestones. Overlap is for discovery only; it does not demonstrate contact or causation.
 
