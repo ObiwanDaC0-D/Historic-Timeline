@@ -6,7 +6,7 @@ const path=require("node:path");
 const vm=require("node:vm");
 const model=require("../src/model.js");
 function loadFullBrowserData(){
-  const sandbox={window:{HistoricModel:model},module:{exports:{}},console};
+  const sandbox={window:{HistoricModel:model,HistoricNavigation:require('../src/navigation.js'),HistoricStorage:require('../src/storage.js')},module:{exports:{}},console};
   const scripts=["data/expanded-events.js","data/locations.js","data/expanded-societies.js","data/reading-links.js","app.js"];
   for(const script of scripts)vm.runInNewContext(fs.readFileSync(path.join(__dirname,"..",script),"utf8"),sandbox,{filename:script});
   return sandbox.module.exports;
