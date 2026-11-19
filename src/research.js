@@ -17,8 +17,7 @@ const events=Object.freeze({
   "Early Homo sapiens":{sourceIds:["smithsonian-sapiens"],dating:{kind:"approximate",earliest:-315000,latest:-285000},note:"Illustrative dating window for the emergence of Homo sapiens; the fossil record does not identify one exact origin year."},
   "Göbekli Tepe":{sourceIds:["unesco-gobekli"],dating:{kind:"approximate",earliest:-9700,latest:-9500},note:"An illustrative window around the existing milestone, not the full site's occupation period."},
   "Indus urban centers":{sourceIds:["unesco-mohenjo"],dating:{kind:"approximate",earliest:-2700,latest:-2500},note:"The linked heritage site is one example; it does not independently substantiate every Indus urban settlement."},
-  "Caral-Supe civilization":{sourceIds:["unesco-caral"],dating:{kind:"approximate",earliest:-3100,latest:-2600},note:"Broad illustrative window; chronology varies by site and phase."},
-  "Great Zimbabwe":{sourceIds:["unesco-zimbabwe"],dating:{kind:"approximate",earliest:1000,latest:1500},note:"Broad site-development period, not an uncertainty interval for one founding event."},
+  "Caral-Supe civilization":{sourceIds:["unesco-caral"],dating:{kind:"approximate",earliest:-3100,latest:-2500},note:"Broad illustrative window; chronology varies by site and phase."},
   "Apollo 11 Moon landing":{sourceIds:["nasa-apollo"],dating:{kind:"year",earliest:1969,latest:1969},note:"Year-level precision only in this atlas."},
   "United Nations founded":{sourceIds:["un-history"],dating:{kind:"year",earliest:1945,latest:1945},note:"Year-level precision only in this atlas."},
   "World Wide Web proposal":{sourceIds:["cern-web"],dating:{kind:"year",earliest:1989,latest:1989},note:"Year-level precision only in this atlas."}
