@@ -40,6 +40,7 @@ const entries=[
 [2020,"COVID-19 pandemic","Global","Everyday life","Worldwide public-health and social disruption.","documented"],
 [2022,"Public generative AI expansion","Global","Science & technology","ChatGPT's release expanded public attention to generative AI.","documented"]
 ];
+if(typeof window!=="undefined" && Array.isArray(window.HISTORIC_EXTRA_EVENTS)){entries.push(...window.HISTORIC_EXTRA_EVENTS);entries.sort((a,b)=>a[0]-b[0]);}
 const societies=[
 {name:"Roman Empire",start:-27,end:476,region:"Europe",x:48,y:31,government:"Imperial monarchy with complex civic and legal institutions",economy:"Agriculture, taxation, trade and slavery",society:"Highly stratified; citizenship and status mattered",belief:"Diverse cults; Christianity spread over time"},
 {name:"Han China",start:-202,end:220,region:"East Asia",x:78,y:34,government:"Dynastic imperial bureaucracy",economy:"Agriculture, craft production and long-distance exchange",society:"Households, officials, farmers, merchants and other groups",belief:"Confucian traditions, ritual and diverse practices"},
