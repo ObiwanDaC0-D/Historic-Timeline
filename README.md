@@ -91,3 +91,13 @@ The interface and historical content are not yet fully modularized; future work 
 - Keyboard users can activate map and chronology markers with Enter or Space. Focus indicators and reduced-motion styles improve accessibility.
 - The map is still a simplified modern geographic locator, **not** a historical territorial reconstruction. Society start/end dates are approximate and do not imply unchanged political control.
 - Automated Node tests cover navigation math and selection; Playwright browser smoke tests cover zoom and map-to-timeline synchronization. No user notes or existing historical records were migrated or deleted.
+
+## Phase 11 — Historical Research
+
+The atlas now displays a **research-context disclosure** on milestone cards. Eight selected milestones have structured editorial dating metadata and links to institutional reading leads. Remaining milestones explicitly state that no event-level source has been assigned. These are **not verified claim-by-claim citations**.
+
+Selecting a society reveals a research profile with its existing governance, economy, social organization, belief traditions, approximate date span and geographically/temporally overlapping milestones. Overlap is for discovery only; it does not demonstrate contact or causation.
+
+A new connections panel introduces three interpretive cross-society comparisons with named mechanisms, evidence-status warnings and caveats. No direct-contact or causal claims are asserted as proven. The Sources section includes a catalog of institutional references and an explicit coverage count.
+
+Research metadata lives in `src/research.js`; escaped presentation helpers are in `src/research-view.js`. See `docs/RESEARCH_PROVENANCE.md` for standards and limitations. Existing records, map interactions, chronology, notes and bookmarks are unchanged.
