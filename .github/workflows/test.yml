@@ -18,5 +18,7 @@ jobs:
           node --check app.js
           node --check data/expanded-events.js
           node --check data/reading-links.js
+          node --check data/locations.js
+          node --check data/expanded-societies.js
       - name: Run unit tests
         run: npm test
